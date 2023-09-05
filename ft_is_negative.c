@@ -11,13 +11,21 @@
 /* ************************************************************************** */
 #include <unistd.h>
 
-void	ft_print_numbers(void)
+void	ft_is_negative(int n)
 {
-	write(1, "0123456789", 10);
+	if(n<0)
+	{
+		write(1, 'N', 1);
+	}
+	else
+	{
+		write(1, 'P', 1);
+	}
+	
 }
 
 int	main(void)
 {
-	ft_print_numbers();
+	ft_is_negative(5);
 	return (0);
 }
