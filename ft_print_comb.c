@@ -11,25 +11,36 @@
 /* ************************************************************************** */
 #include <unistd.h>
 
-void	ft_is_negative(int n)
+void	ft_print_comb(void)
 {
-	char	x;
-	char	y;
-
-	x = 'N';
-	y = 'P';
-	if (n < 0)
+	char numbers[] = "0123456789";
+	int	x;
+	int	y;
+	int	z;
+	
+	x = 0;
+	while (x < 10)
 	{
-		write(1, &x, 1);
-	}
-	else
-	{
-		write(1, &y, 1);
+		y = x + 1;
+		while (y < 10)
+		{
+			z = y + 1;
+			while (z < 10)
+			{
+				write(1, &numbers[x], 1);
+				write(1, &numbers[y], 1);
+				write(1, &numbers[z], 1);
+				write(1, ", ",2);
+				z = z + 1;
+			}
+			y = y + 1;
+		}
+		x = x + 1;
 	}
 }
 
 int	main(void)
 {
-	ft_is_negative(-1);
+	ft_print_comb();
 	return (0);
 }
