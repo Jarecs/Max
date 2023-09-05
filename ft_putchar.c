@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   teste.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vgocalv <vgocalv@student.42sp.org.br>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/06 08:48:38 by vgocalv           #+#    #+#             */
+/*   Updated: 2021/09/06 08:48:38 by vgocalv          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <unistd.h>
 
-void ft_putchar(char c){
+void	ft_putchar(char c)
+{
 	write(1, &c, 1);
 }
 
-int main(void)
+int	main(void)
 {
-	ft_putchar('j');		
-	return 0;
+	ft_putchar('j');
+	return (0);
 }

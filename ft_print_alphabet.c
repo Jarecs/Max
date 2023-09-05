@@ -1,13 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   teste.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vgocalv <vgocalv@student.42sp.org.br>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/06 08:48:38 by vgocalv           #+#    #+#             */
+/*   Updated: 2021/09/06 08:48:38 by vgocalv          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <unistd.h>
 
-void ft_print_alphabet(void){
-	for (char i = 'a'; i <= 'z'; i++) {
-		write(1, &i, 1);
-	}	
+void	ft_print_alphabet(void)
+{
+	write(1, "abcdefghijklmnopqrstuvwxyz", 26);
 }
 
-int main(void)
+int	main(void)
 {
 	ft_print_alphabet();
-	return 0;
+	return (0);
 }
