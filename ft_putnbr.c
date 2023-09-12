@@ -11,28 +11,32 @@
 /* ************************************************************************** */
 #include <unistd.h>
 
-void	ft_print_comb(void)
+void	ft_putnbr(int nb)
 {
-	char	output[5];
-	output[3] = ',';
-	output[4] = ' ';
-	for (int i = 0; i < 10; ++i)
+	char sign = '-';
+	if (nb < 0)
 	{
-		for (int j = i + 1; j < 10; ++j)
-		{
-			for (int k = j + 1; k < 10; ++k)
-			{
-				output[0] = '0' + i;
-				output[1] = '0' + j;
-				output[2] = '0' + k;
-				write(1, output, 5);
-			}
-		}
+		nb = -nb;
+		write(1, &sign, 1);
+	}
+	
+	int nb_reversed = 0;
+	while (nb != 0)
+	{
+		nb_reversed = nb_reversed * 10 + (nb % 10);
+		nb /= 10;
+	}
+	while (nb_reversed != 0)
+	{
+		int digit = nb_reversed % 10;
+		char i = '0' + digit;
+		write(1, &i, 1);
+		nb_reversed /= 10;
 	}
 }
 
 int	main(void)
 {
-	ft_print_comb();
+	ft_putnbr(-42);
 	return (0);
 }

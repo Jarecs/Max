@@ -11,28 +11,23 @@
 /* ************************************************************************** */
 #include <unistd.h>
 
-void	ft_print_comb2(void)
-{
-	char	numbers[] = "0123456789";
-	char	cx;
-	char	cy;
-	int		x;
-	int		y;
-
-	for(x = 0; x < 100; x++)
+void ft_print_comb2() {
+	char output[7];
+	output[2] = ' ';
+	output[5] = ',';
+	output[6] = ' ';
+	for (int i = 0; i < 100; i++)
 	{
-		for(y = x + 1; y < 100; y++)
+		for (int j = i + 1; j < 100; j++)
 		{
-			cx = '0' + x;
-			cy = '0' + y;
-			write(1, &cx, 1);
-			write(1, &" ", 1);
-			write(1, &cy, 1);
-			write(1, &", ", 2);
+			output[0] = '0' + i / 10;
+			output[1] = '0' + i % 10;
+			output[3] = '0' + j / 10;
+			output[4] = '0' + j % 10;
+			write(1, output, 7);
 		}
 	}
 }
-
 
 int	main(void)
 {
