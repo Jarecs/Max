@@ -14,12 +14,18 @@ void	ft_print_comb(void)
 				output[0] = '0' + i;
 				output[1] = '0' + j;
 				output[2] = '0' + k;
-				write(1, output, 5);
+				if ((i == 7) && (j == 8) && (k == 9))
+				{
+					write(1, output, 3);
+				}
+				else
+				{
+					write(1, output, 5);
+				}
 			}
 		}
 	}
 }
-
 /*
 int	main(void)
 {

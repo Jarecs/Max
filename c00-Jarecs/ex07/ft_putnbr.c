@@ -5,31 +5,30 @@ void	ft_putnbr(int nb)
 	char sign = '-';
 	if (nb < 0)
 	{
-		nb = -nb;
 		write(1, &sign, 1);
 	}
-
-	int nb_reversed = 0;
-	while (nb != 0)
+	int count = 1;
+	int nb2 = nb;
+	while	(nb2 != 0)
 	{
-		nb_reversed = nb_reversed * 10 + (nb % 10);
-		nb /= 10;
+		nb2 /= 10;
+		count *= 10;
 	}
-
 	int digit;
-	char i;
-	while (nb_reversed != 0)
+	char c;
+	while	(count != 0)
 	{
-		digit = nb_reversed % 10;
-		i = '0' + digit;
-		write(1, &i, 1);
-		nb_reversed /= 10;
+		digit = nb / count;
+		nb = nb % count;
+		count /= 10;
+		c = '0' + digit;
+		write(1, &c, 1);
 	}
 }
 
 
 int	main(void)
 {
-	ft_putnbr(42);
+	ft_putnbr(-21474836);
 	return (0);
 }
