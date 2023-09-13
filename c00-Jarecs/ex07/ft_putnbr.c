@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include <stdio.h>
 
 void	ft_putnbr(int nb)
 {
@@ -14,12 +15,19 @@ void	ft_putnbr(int nb)
 		nb2 /= 10;
 		count *= 10;
 	}
+	printf("\ncount: %d\n", count);
 	int digit;
 	char c;
 	while	(count != 0)
 	{
 		digit = nb / count;
+		if (digit < 0)
+		{
+			digit *= -1;
+		}
+		printf("digit: %d\n", digit);
 		nb = nb % count;
+		printf("nb: %d\n", nb);
 		count /= 10;
 		c = '0' + digit;
 		write(1, &c, 1);
